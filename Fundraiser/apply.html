@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Complete Application Form - Startup Funding Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0f1724; --card:#0b1220; --muted:#9aa4b2; --accent:#06b6d4; --accent-2:#34d399;}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui;background:#f8f9fa;color:#333;line-height:1.5}
+    .container{max-width:800px;margin:0 auto;padding:20px}
+    .form-card{background:#fff;padding:30px;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.1)}
+    h1{color:#000;margin-bottom:8px}
+    .subtitle{color:#666;margin-bottom:30px}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .form-group{margin-bottom:16px}
+    label{display:block;margin-bottom:6px;color:#333;font-weight:600}
+    input,select,textarea{width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;font-size:14px}
+    input:focus,select:focus,textarea:focus{outline:none;border-color:#06b6d4;box-shadow:0 0 0 2px rgba(6,182,212,0.1)}
+    .btn{padding:12px 24px;border:none;border-radius:8px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block}
+    .btn-primary{background:linear-gradient(90deg,#34d399,#06b6d4);color:#042}
+    .btn-secondary{background:#6b7280;color:#fff}
+    .checkbox-group{margin:12px 0}
+    .checkbox-item{display:flex;align-items:center;margin:8px 0}
+    .checkbox-item input{width:auto;margin-right:8px}
+    .back-link{color:#06b6d4;text-decoration:none;margin-bottom:20px;display:inline-block}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="back-link">← Back to Portal</a>
+    
+    <div class="form-card">
+      <h1>Complete Application Form</h1>
+      <p class="subtitle">Fill out this comprehensive form to apply for funding schemes</p>
+      
+      <form id="fullApplicationForm" onsubmit="handleSubmit(event)">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="startup">Startup Name *</label>
+            <input id="startup" type="text" required placeholder="Your startup name">
+          </div>
+          <div class="form-group">
+            <label for="founder">Founder Name *</label>
+            <input id="founder" type="text" required placeholder="Your full name">
+          </div>
+        </div>
+        
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input id="email" type="email" required placeholder="contact@startup.com">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone *</label>
+            <input id="phone" type="tel" required placeholder="+91 9876543210">
+          </div>
+        </div>
+        
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="sector">Sector *</label>
+            <select id="sector" required>
+              <option value="">Select Sector</option>
+              <option value="tech">Technology</option>
+              <option value="agri">Agriculture & Food</option>
+              <option value="health">Healthcare & Biotech</option>
+              <option value="fintech">Fintech</option>
+              <option value="energy">Energy & Environment</option>
+              <option value="education">Education</option>
+              <option value="manufacturing">Manufacturing</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="stage">Current Stage *</label>
+            <select id="stage" required>
+              <option value="">Select Stage</option>
+              <option value="idea">Idea Stage</option>
+              <option value="prototype">Prototype</option>
+              <option value="mvp">MVP Ready</option>
+              <option value="revenue">Revenue Generating</option>
+              <option value="growth">Scaling</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="entity">Registered Entity *</label>
+          <input id="entity" type="text" required placeholder="Pvt Ltd / LLP / Partnership">
+        </div>
+        
+        <div class="form-group">
+          <label for="funding">Funding Required *</label>
+          <select id="funding" required>
+            <option value="">Select Amount</option>
+            <option value="5-10">₹5-10 Lakhs</option>
+            <option value="10-25">₹10-25 Lakhs</option>
+            <option value="25-50">₹25-50 Lakhs</option>
+            <option value="50-100">₹50L-1Cr</option>
+            <option value="1-5cr">₹1-5Cr</option>
+            <option value="5cr+">₹5Cr+</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="summary">Business Summary *</label>
+          <textarea id="summary" required placeholder="Brief description of your business (50 words)" rows="3"></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="product">Product Description *</label>
+          <textarea id="product" required placeholder="Detailed description of your product/service, target market, unique value proposition..." rows="4"></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="deck">Pitch Deck URL</label>
+          <input id="deck" type="url" placeholder="Google Drive / Dropbox link to your pitch deck">
+        </div>
+        
+        <div class="form-group">
+          <label for="revenue">Revenue Model *</label>
+          <textarea id="revenue" required placeholder="How do you make money? Pricing strategy, revenue streams..." rows="3"></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="team">Team Details *</label>
+          <textarea id="team" required placeholder="Founder(s) background, key team members, experience..." rows="3"></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="market">Market Analysis *</label>
+          <textarea id="market" required placeholder="Market size, competition, target customers..." rows="3"></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label>Required Documents Checklist</label>
+          <div class="checkbox-group">
+            <div class="checkbox-item">
+              <input type="checkbox" required> Company Registration Certificate *
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" required> PAN Card *
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" required> Bank Account Details *
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox"> Audited Financials (if available)
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox"> Business Plan PDF
+            </div>
+          </div>
+        </div>
+        
+        <div style="display:flex;gap:12px;margin-top:30px">
+          <button type="submit" class="btn btn-primary">Submit Complete Application</button>
+          <a href="index.html" class="btn btn-secondary">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      
+      const formData = {
+        startupName: document.getElementById('startup').value,
+        founderName: document.getElementById('founder').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        sector: document.getElementById('sector').value,
+        stage: document.getElementById('stage').value,
+        registeredEntity: document.getElementById('entity').value,
+        fundingRequired: document.getElementById('funding').value,
+        businessSummary: document.getElementById('summary').value,
+        productDescription: document.getElementById('product').value,
+        pitchDeckUrl: document.getElementById('deck').value,
+        revenueModel: document.getElementById('revenue').value,
+        teamDetails: document.getElementById('team').value,
+        marketAnalysis: document.getElementById('market').value,
+        applicationType: 'full',
+        timestamp: new Date().toISOString()
+      };
+      
+      // Store application
+      const applications = JSON.parse(localStorage.getItem('fullApplications') || '[]');
+      applications.push(formData);
+      localStorage.setItem('fullApplications', JSON.stringify(applications));
+      
+      alert(`Complete Application Submitted Successfully!\n\nApplication ID: FULL${Date.now()}\n\nNext Steps:\n1. Document verification (3-5 days)\n2. Business model evaluation\n3. Due diligence process\n4. Pitch presentation (if shortlisted)\n5. Funding decision\n\nTimeline: 2-4 weeks\nYou will receive detailed updates via email.`);
+      
+      // Redirect back to main page
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>
